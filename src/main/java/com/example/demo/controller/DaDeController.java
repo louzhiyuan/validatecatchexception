@@ -46,7 +46,7 @@ public class DaDeController {
         JSONObject thirdResJson = JSONObject.parseObject(data);
         System.out.println("学历:"+thirdResJson.toString());
 
-        logger.debug("学历:"+thirdResJson.toString());
+        logger.info("学历:"+thirdResJson.toString());
 
         String code = thirdResJson.getString("code");
         switch(code) {
