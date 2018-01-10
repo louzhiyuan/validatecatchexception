@@ -39,12 +39,12 @@ public class DaDeController {
                           @NotBlank(message = "{'resCode':'1005','resMsg':'姓名不能为空'}")  @RequestParam("name")String name){
 
         Response response = new Response();
+        logger.info("收到请求： {}","idNo="+idNo+"&"+"name="+name);
+        
         //把姓名过滤，自动排除空格
         String data = getE(idNo,name.replace(" ",""));
         JSONObject thirdResJson = JSONObject.parseObject(data);
         System.out.println("学历:"+thirdResJson.toString());
-
-        logger.info("学历:"+thirdResJson.toString());
 
         String code = thirdResJson.getString("code");
         switch(code) {
